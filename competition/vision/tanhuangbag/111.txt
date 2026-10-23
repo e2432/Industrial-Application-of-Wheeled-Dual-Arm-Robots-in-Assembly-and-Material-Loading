@@ -1,0 +1,40 @@
+
+sudo su
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+ros2 launch orbbec_camera multi_camera.launch.py 
+
+
+
+
+sudo su
+cd /home/niic/Desktop/competition/vision
+source ~/activate_box_pose.sh
+python ./screw_ros2.py 
+#
+python ./tanhuang_ros2.py
+#
+
+sudo su
+source /opt/robot/current/bin/ros2env
+ros2 run rqt_image_view rqt_image_view
+
+
+sudo su
+source /opt/robot/current/bin/ros2env
+cd /home/niic/Desktop/competition/vision/tanhuangbag
+python ./screw_grasp_bridge_v11_grasp_verify_retry.py \
+    --ros-args \
+    -p enable_motion:=true \
+    -p max_grasp_retries:=1
+
+python ./spring_raise_to_1p7_and_left_reverse_zero_v9_1_pitch_root_continuous_safe_fixed.py \
+    -z 1.70 \
+    --forearm-tol-deg 20 \
+    --velocity-scale 0.60 \
+    --execute
+
+
+
+

@@ -1,0 +1,34 @@
+
+sudo su
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+ros2 launch orbbec_camera multi_camera.launch.py 
+
+
+
+
+sudo su
+cd /home/niic/Desktop/competition/vision
+source ~/activate_box_pose.sh
+python ./screw_ros2.py 
+#
+python ./tanhuang_ros2.py
+#
+
+sudo su
+source /opt/robot/current/bin/ros2env
+ros2 run rqt_image_view rqt_image_view
+
+
+sudo su
+source /opt/robot/current/bin/ros2env
+cd /home/niic/Desktop/competition/vision/tanhuangbag
+python3 screw_grasp_bridge_v6_tcp_center_execute_close_right.py --ros-args -p enable_motion:=true
+
+
+
+sudo su
+source /opt/robot/current/bin/ros2env
+cd /home/niic/Desktop/competition/vision/tanhuangbag
+python3 screw_grasp_bridge_v10_no_input_auto_execute_liftdown_01.py --ros-args -p enable_motion:=true

@@ -1,0 +1,86 @@
+format_version: 1
+frame_id: map
+waypoints:
+- object_id: point1
+  display_name: b
+  dock_pose:
+  - -20.70023
+  - 11.760487
+  - -1.311597
+  dwell_seconds: 1.0
+- object_id: point2
+  display_name: c
+  dock_pose:
+  - -20.684964
+  - 10.402912
+  - -2.308675
+  dwell_seconds: 1.0
+  
+- object_id: grab1
+  display_name: d
+  dock_pose:
+  - -23.199287
+  - 10.040071
+  - 1.828358
+  dwell_seconds: 1.0
+- object_id: mid1
+  display_name: 4
+  dock_pose:
+  - -22.895207
+  - 9.3988525
+  - -1.119448
+  dwell_seconds: 1.0
+- object_id: drop1
+  display_name: h
+  dock_pose:
+  - -22.895207
+  - 8.757634
+  - -1.119448
+  dwell_seconds: 1.0 
+ 
+
+- object_id: grab3
+  display_name: f
+  dock_pose:
+  - -21.930242
+  - 10.427613
+  - 1.936734
+  dwell_seconds: 1.0
+- object_id: mid3
+  display_name: 5
+  dock_pose:
+  - -21.973067
+  - 9.808078
+  - -1.313701
+  dwell_seconds: 1.0
+- object_id: drop3
+  display_name: j
+  dock_pose:
+  - -21.973067
+  - 9.188543
+  - -1.313701
+  dwell_seconds: 1.0
+
+- object_id: point3
+  display_name: 1
+  dock_pose:
+  - -20.684964
+  - 10.402912
+  - -2.308675
+  dwell_seconds: 1.0
+
+- object_id: point4
+  display_name: 2
+  dock_pose:
+  - -20.70023
+  - 11.760487
+  - -1.311597
+  dwell_seconds: 1.0
+
+- object_id: end
+  display_name: 3
+  dock_pose:
+  - -19.299391
+  - 12.352888
+  - -1.136545
+  dwell_seconds: 1.0

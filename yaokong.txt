@@ -1,0 +1,82 @@
+sudo su
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+ros2 run upper_ethercat ethercat-upper -x 6 -l 0
+
+
+sudo su
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+ros2 launch ethercat_chassis ethercat_chassis.launch.py
+
+
+sudo su
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+ros2 launch robot_a_moveit_config demo.launch.py
+
+
+
+# oneclick_robot_start :
+chmod +x /home/niic/Desktop/robot_a_oneclick_start.sh
+/home/niic/Desktop/robot_a_oneclick_start.sh
+
+# oneclick_screw_start :
+chmod +x /home/niic/Desktop/screw_bag_oneclick_start_tabs.sh
+/home/niic/Desktop/screw_bag_oneclick_start_tabs.sh
+
+# oneclick_spring_start :
+chmod +x ~/Desktop/spring_grasp_oneclick_start_taps.sh
+/home/niic/Desktop/spring_grasp_oneclick_start_taps.sh
+
+# oneclick_box_start :
+chmod +x ~/Desktop/box_grasp_oneclick_start_taps.sh
+/home/niic/Desktop/box_grasp_oneclick_start_taps.sh
+
+
+sudo su
+source /opt/robot/current/bin/ros2env
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/mecanum_drive_controller/reference_unstamped
+
+i:qian
+j:zuozhuan
+k:jiting
+l:youzhuan
+,:houtui
+
+xiansudutiaozheng:w(tiao da)  x(tiao xiao)
+jiaosudutiaozheng:e(tiao da) c(tiao xiao)
+tongshitiao:q(tiao da)  z(tiao xiao)
+
+
+
+sudo su
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+ros2 launch orbbec_camera multi_camera.launch.py 
+
+
+sudo su
+cd /home/niic/Desktop/competition/vision
+source ~/activate_box_pose.sh
+python ./box_ros2.py
+
+
+
+sudo su
+source /opt/robot/current/bin/ros2env
+ros2 run rqt_image_view rqt_image_view
+
+# qi dong lei da
+sudo su
+source /home/niic/mojl_robotA/install/setup.bash
+ros2 launch livox_ros_driver2 rviz_MID360s_launch.py 
+
+
+cd /home/niic/mojl_robotA
+source /opt/robot/current/bin/ros2env
+source install/setup.bash

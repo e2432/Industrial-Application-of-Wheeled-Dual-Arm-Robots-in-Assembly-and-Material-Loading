@@ -1,0 +1,20 @@
+parameters:
+  name: eob_calib
+  calibration_type: eye_on_base
+  robot_base_frame: head_pitch_link
+  robot_effector_frame: arm_left7_link
+  tracking_base_frame: camera_head_link
+  tracking_marker_frame: object
+  freehand_robot_movement: true
+  move_group_namespace: /
+  move_group: manipulator
+transform:
+  translation:
+    x: 0.07486659177746052
+    y: -0.038697053818949674
+    z: 0.04652337730138739
+  rotation:
+    x: 0.7019402931038256
+    y: -0.003469093949903246
+    z: 0.015886516351918237
+    w: 0.7120501449355111

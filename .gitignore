@@ -1,0 +1,14 @@
+@'
+# 排除 20260116 整个文件夹
+20260116/
+
+# 排除超过 GitHub 100MB 限制的大文件
+competition/vision/rgbd_recordings/multiscrew.zip
+competition/vision/rgbd_recordings/single_box.zip
+
+# 排除常见的无用文件
+*.pyc
+__pycache__/
+build/
+log/
+'@ | Out-File -FilePath .gitignore -Encoding utf8

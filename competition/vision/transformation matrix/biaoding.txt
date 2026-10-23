@@ -1,0 +1,52 @@
+sudo su
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+ros2 run upper_ethercat ethercat-upper -x 6 -l 0
+
+
+sudo su
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+ros2 launch ethercat_chassis ethercat_chassis.launch.py
+
+
+sudo su
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+ros2 launch robot_a_moveit_config demo.launch.py
+
+
+sudo su
+source /opt/robot/current/bin/ros2env
+source /home/niic/mojl_robotA/install/setup.bash
+export FASTDDS_BUILTIN_TRANSPORTS=UDPv4
+ros2 launch orbbec_camera multi_camera.launch.py 
+
+
+sudo su
+source /opt/robot/current/bin/ros2env
+ros2 run apriltag_ros apriltag_node --ros-args \
+    -r image_rect:=/camera_head/color/image_raw \
+    -r camera_info:=/camera_head/color/camera_info \
+    --params-file `ros2 pkg prefix apriltag_ros`/share/apriltag_ros/cfg/tags_36h11.yaml
+    
+    
+    
+sudo su
+cd /home/niic/myy
+source install/setup.bash
+source /opt/robot/current/bin/ros2env
+ros2 launch easy_handeye2 calibrate.launch.py \
+    name:=eob_calib \
+    calibration_type:=eye_on_base \
+    robot_base_frame:=head_pitch_link \
+    robot_effector_frame:=arm_left7_link \
+    tracking_base_frame:=camera_head_link \
+    tracking_marker_frame:=object
+
+
+
+ros2 run tf2_ros tf2_echo camera_head_color_optical_frame object

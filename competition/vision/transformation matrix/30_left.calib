@@ -1,0 +1,22 @@
+parameters:
+  name: 30_left
+  calibration_type: eye_on_base
+  robot_base_frame: head_pitch_link
+  robot_effector_frame: arm_left7_link
+  tracking_base_frame: camera_head_link
+  tracking_marker_frame: object
+  freehand_robot_movement: true
+  move_group_namespace: /
+  move_group: manipulator
+transform:
+  translation:
+    x: 0.06480834293416972
+    y: -0.03429895707276792
+    z: 0.04566254024630251
+  rotation:
+    x: 0.7187635318589575
+    y: -0.013676536826422003
+    z: -9.38162447091715e-05
+    w: 0.6951200822941209
+
+

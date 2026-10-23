@@ -1,0 +1,19 @@
+# dry-run :
+source /opt/ros/humble/setup.bash
+source /opt/robot/current/bin/ros2env
+source /home/niic/project/20260623/20260116/test_robot_A/install/setup.bash
+
+/usr/bin/python3.10 \
+  /home/niic/Desktop/competition/hand/robot_a_moveit_home_oneclick_v2.py \
+  --dry-run \
+  --velocity-scale 0.20
+
+# run :
+source /opt/ros/humble/setup.bash
+source /opt/robot/current/bin/ros2env
+source /home/niic/project/20260623/20260116/test_robot_A/install/setup.bash
+
+/usr/bin/python3.10 \
+  /home/niic/Desktop/competition/hand/robot_a_moveit_home_oneclick_v2.py \
+  --velocity-scale 0.20
+

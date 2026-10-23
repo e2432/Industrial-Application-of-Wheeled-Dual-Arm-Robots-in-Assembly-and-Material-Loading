@@ -1,0 +1,39 @@
+# run ros2 :
+cd /home/niic/Desktop/competition/vision/box
+source ~/activate_box_pose.sh
+python ./box_ros2_open_rim_corner_midpoints_3d_geomselect.py
+
+# dry run :
+cd /home/niic/Desktop/competition/vision/box
+
+source /opt/ros/humble/setup.bash
+source /opt/robot/current/bin/ros2env
+source /home/niic/project/20260623/20260116/test_robot_A/install/setup.bash
+
+/usr/bin/python3.10 \
+  box_grasp_bridge_mirror_vision_raw_prelift025.py \
+  --ros-args \
+  -p enable_motion:=false \
+  -p velocity_scale:=0.20
+
+# run :
+cd /home/niic/Desktop/competition/vision/box
+source /opt/robot/current/bin/ros2env
+source /home/niic/project/20260623/20260116/test_robot_A/install/setup.bash
+
+/usr/bin/python3.10 \
+  box_grasp_bridge_mirror_vision_raw_prelift025.py \
+  --ros-args \
+  -p enable_motion:=true \
+  -p require_execute_confirmation:=true \
+  -p velocity_scale:=0.20
+
+# replace :
+python ./box_dual_arm_place_height_constrained_v4_smooth.py \
+    -z 1.3 \
+    --velocity-scale 0.50 \
+    --execute
+
+# release :
+python ./box_dual_arm_release_outward_3cm.py --execute
+

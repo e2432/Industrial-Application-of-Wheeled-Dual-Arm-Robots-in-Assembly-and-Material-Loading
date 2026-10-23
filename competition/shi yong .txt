@@ -1,0 +1,13 @@
+sudo su
+
+
+cd /home/niic/project/20260623/20260116/test_robot_A
+source /opt/robot/current/bin/ros2env
+source install/setup.bash
+
+
+
+ cd /home/niic/Desktop/competition/hand/robot_A_iknet_best
+
+
+

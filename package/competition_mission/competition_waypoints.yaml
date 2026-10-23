@@ -1,0 +1,57 @@
+format_version: 1
+frame_id: map
+waypoints:
+  - object_id: start
+    display_name: start
+    dock_pose: [-19.299391, 12.352888, -1.136545]
+    dwell_seconds: 5.0
+
+  - object_id: point1
+    display_name: transit_1
+    dock_pose: [-20.700230, 11.760487, -1.311597]
+    dwell_seconds: 5.0
+
+  - object_id: point2
+    display_name: transit_2
+    dock_pose: [-20.684964, 10.402912, -2.308675]
+    dwell_seconds: 5.0
+
+  - object_id: grab1
+    display_name: grab_1
+    dock_pose: [-23.199287, 10.040071, 1.828358]
+    dwell_seconds: 5.0
+
+  - object_id: drop1
+    display_name: drop_1
+    dock_pose: [-22.895207, 8.757634, -1.119448]
+    dwell_seconds: 5.0
+
+  - object_id: grab2
+    display_name: grab_2
+    dock_pose: [-22.471086, 10.305028, 1.816073]
+    dwell_seconds: 5.0
+
+  - object_id: drop2
+    display_name: drop_2
+    dock_pose: [-22.405790, 9.057655, -1.162349]
+    dwell_seconds: 5.0
+
+  - object_id: grab3
+    display_name: grab_3
+    dock_pose: [-21.930242, 10.427613, 1.936734]
+    dwell_seconds: 5.0
+
+  - object_id: drop3
+    display_name: drop_3
+    dock_pose: [-21.973067, 9.188543, -1.313701]
+    dwell_seconds: 5.0
+
+  - object_id: grab4
+    display_name: grab_4
+    dock_pose: [-21.361900, 10.553792, 1.915015]
+    dwell_seconds: 5.0
+
+  - object_id: drop4
+    display_name: drop_4
+    dock_pose: [-21.326287, 9.366819, -1.304407]
+    dwell_seconds: 5.0

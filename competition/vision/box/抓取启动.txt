@@ -1,0 +1,61 @@
+cd /home/niic/Desktop/competition/vision/box/box_ros2
+source ~/activate_box_pose.sh
+python3 box_ros2_robust.py --ros-args \
+  -p target_center_band_ratio:=0.25 \
+  -p target_depth_roi_scale:=0.50 \
+  -p target_depth_percentile:=30.0
+
+## 低速实机试验
+
+先空载、降低速度并保持急停可触达：
+
+cd /home/niic/Desktop/competition/vision/box/box_bridge
+
+source /opt/robot/current/bin/ros2env
+source /home/niic/project/20260623/20260116/test_robot_A/install/setup.bash
+
+python3 moveit_gripper_verified_grasp_v15_safe_launcher.py \
+  --ros-args \
+  -p enable_motion:=true \
+  -p execute_confirmation:=EXECUTE_MOVEIT \
+  -p inter_arm_collision_matrix_verified:=true \
+  -p planning_group:=lift_dual_arm \
+  -p planning_pipeline_id:=ompl \
+  -p planner_id:=lift_dual_arm \
+  -p velocity_scale:=0.15 \
+  -p acceleration_scale:=0.02 \
+  -p gripper_close_enabled:=true \
+  -p gripper_joint_names_csv:="hand_left_finger_left1_joint,hand_right_finger_right1_joint" \
+  -p gripper_closed_positions_csv:="0.0,0.0"
+
+
+
+python box_dual_arm_release_outward_3cm_v2_fixed.py --exe
+
+python box_all_joints_zero.py --exe
+
+
+
+
+cd /home/niic/Desktop/competition/vision/box/box_bridge
+
+python3 moveit_gripper_verified_grasp_v19_fast.py \
+  --ros-args \
+  -p enable_motion:=true \
+  -p execute_confirmation:=EXECUTE_MOVEIT \
+  -p inter_arm_collision_matrix_verified:=true \
+  -p planning_group:=lift_dual_arm \
+  -p planning_pipeline_id:=ompl \
+  -p planner_id:=lift_dual_arm \
+  -p velocity_scale:=0.5 \
+  -p acceleration_scale:=0.02 \
+  -p gripper_close_enabled:=true \
+  -p v18_lift_top_m:=0.25 \
+  -p v18_pregrasp_outward_m:=0.025 \
+  -p v19_zero_start_margin_rad:=0.001 \
+  -p gripper_joint_names_csv:="hand_left_finger_left1_joint,hand_right_finger_right1_joint" \
+  -p gripper_closed_positions_csv:="0.0,0.0"
+
+
+
+
